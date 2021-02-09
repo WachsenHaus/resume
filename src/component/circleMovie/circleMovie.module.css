@@ -1,0 +1,43 @@
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 12rem;
+  height: 12rem;
+}
+.rotateCircle {
+  position: absolute;
+}
+.img {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 0.1rem solid rgb(160, 160, 160);
+}
+.color {
+  left: 0%;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 0.1rem solid rgb(9, 105, 17);
+  /* animation-name: circleRotate;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite; */
+}
+
+@keyframes circleRotate {
+  0% {
+    transform: scale(1);
+    border-color: rgba(9, 105, 17, 0);
+  }
+  50% {
+    transform: scale(1.02);
+    border-color: rgba(9, 105, 17, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    border-color: rgba(9, 105, 17, 0.3);
+  }
+}

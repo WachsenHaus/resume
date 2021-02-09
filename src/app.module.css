@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "MapoFlowerIsland";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.app {
+  font-family: "MapoFlowerIsland", "Courier New", Courier, monospace;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(242, 242, 242);
+}
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.column {
+  margin-bottom: 2rem;
+}
+.name {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  border-bottom: 0rem;
+  font-size: 1.4rem;
+}
+.name::after {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  content: "";
+  height: 0.01rem;
+  width: 0rem;
+  opacity: 0;
+  background-color: black;
+  border: 0.01rem solid black;
+  transition: all 0.3s ease-in-out;
+}
+.name:hover {
+  cursor: pointer;
+}
+.name:hover::after {
+  opacity: 1;
+  width: 100%;
+  transform: translateX(-50%);
+}
+
+.icon {
+  position: relative;
+  padding: 0 1rem;
+}
+.icon::after {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  content: "";
+  height: 0.01rem;
+  width: 0rem;
+  opacity: 0;
+  background-color: black;
+  border: 0.01em solid black;
+  transition: all 0.3s ease-in-out;
+}
+.icon:hover {
+  cursor: pointer;
+}
+.icon:hover::after {
+  opacity: 1;
+  width: 50%;
+  transform: translateX(-50%);
+}
