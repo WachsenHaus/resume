@@ -7,6 +7,7 @@ import { AiOutlineGithub, AiOutlineSearch } from "react-icons/ai";
 import { ImBlogger } from "react-icons/im";
 import mygif from "./img/intro.gif";
 import Nav from "./component/Nav/nav";
+import Introduce from "./component/Introduce/introduce";
 function App() {
   const onClickGithub = () => {
     window.open("https://github.com/WachsenHaus");
@@ -55,6 +56,78 @@ function App() {
           </Route>
           <Route exact path="/me">
             <Nav></Nav>
+            <article className={styles.article}>
+              <div className={styles.container}>
+                <Introduce></Introduce>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>??</div>
+                <div>끝</div>
+              </div>
+            </article>
           </Route>
         </Switch>
       </BrowserRouter>
