@@ -16,6 +16,7 @@ const Button = ({ prev, next, handleSlide }) => {
       //   mStyle.after.left = "47%";
       //   mStyle.after.transform = " translate(-50%, -50%) rotate(-45deg)";
       //
+      //
     }
   }, []);
 
