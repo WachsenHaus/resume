@@ -1,9 +1,35 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import styled from "styled-components";
 import Item from "./item";
-import styles from "./carousel.module.css";
 import Button from "./button";
+import image1 from "../../img/image1.jpg";
+import image2 from "../../img/image2.jpg";
+import image3 from "../../img/image3.jpg";
+import image4 from "../../img/image4.jpg";
+import image5 from "../../img/image5.jpg";
+const images = [image1, image2, image3, image4, image5];
+const CarouselStyle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // overflow: hidden;
+  width: 20rem;
+  height: 20rem;
+  margin: auto;
+  * {
+    // box-sizing: border-box;
+  }
+  .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+`;
 
-const Carousel = (props) => {
+export default function Carousel() {
   const totalItems = 5;
   const [current, setCurrent] = useState(0);
 
@@ -25,6 +51,7 @@ const Carousel = (props) => {
       }
     }
   };
+
   const movePrev = () => {
     if (!isMoving.current) {
       if (current === 0) {
@@ -34,36 +61,32 @@ const Carousel = (props) => {
       }
     }
   };
-  const ItemList = Array(totalItems)
-    .fill()
-    .map((_, index) => {
-      const key = `item_${index}`;
-      const prev = current === 0 ? totalItems - 1 : current - 1;
-      const next = current === totalItems - 1 ? 0 : current + 1;
 
-      return (
-        <Item
-          src={`https://picsum.photos/id/${index}/1600/900`}
-          key={key}
-          active={index === current}
-          prev={index === prev}
-          next={index === next}
-        />
-      );
-    });
+  const ItemList = images.map((item, index) => {
+    const key = `item_${index}`;
+
+    const prev = current === 0 ? totalItems - 1 : current - 1;
+    const next = current === totalItems - 1 ? 0 : current + 1;
+
+    return (
+      <Item
+        src={item}
+        key={key}
+        active={index === current}
+        prev={index === prev}
+        next={index === next}
+      />
+    );
+  });
 
   return (
-    <>
-      <div className={styles.wrapper}>
-        <div className={styles.carousel}>
-          {ItemList}
+    <CarouselStyle>
+      <div className="carousel">
+        {ItemList}
 
-          <Button prev handleSlide={movePrev}></Button>
-          <Button next handleSlide={moveNext} />
-        </div>
+        <Button prev handleSlide={movePrev} />
+        <Button next handleSlide={moveNext} />
       </div>
-    </>
+    </CarouselStyle>
   );
-};
-
-export default Carousel;
+}
