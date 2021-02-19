@@ -1,7 +1,8 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BrowserRouter, Switch, NavLink, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import styles from "./app.module.css";
+import navStyles from "./component/Nav/nav.module.css";
 import CircleMovie from "./component/circleMovie/circleMovie";
 import { AiOutlineGithub, AiOutlineSearch } from "react-icons/ai";
 import { ImBlogger } from "react-icons/im";
@@ -18,7 +19,8 @@ function App() {
   const onClickBlog = () => {
     window.open("https://blog.naver.com/bi9choi");
   };
-  const items = useRef([
+
+  const bodyItems = useRef([
     React.createRef(),
     React.createRef(),
     React.createRef(),
@@ -27,6 +29,16 @@ function App() {
     React.createRef(),
     React.createRef(),
   ]);
+
+  const testRef = useRef();
+  useEffect(() => {
+    console.log(testRef);
+  }, []);
+
+  // useState
+  const [subject, setSubject] = useState();
+  // const currentSubject;
+  // console.log(currentSubject);
 
   return (
     <div className={styles.app}>
@@ -67,14 +79,25 @@ function App() {
             </main>
           </Route>
           <Route exact path="/me">
-            <Nav></Nav>
+            <Nav setSubject={setSubject} bodyItems={bodyItems}></Nav>
             <article className={styles.article}>
               <div className={styles.container}>
-                <Introduce />
-                <Skill />
-                <Project />
-                <Company />
-                <div>??</div>
+                {subject === "자기소개" ? (
+                  <Introduce active={true} />
+                ) : (
+                  <Introduce active={false} />
+                )}
+                {subject === "기술" ? <Skill active={true} /> : <Skill active={false} />}
+                {subject === "프로젝트" ? (
+                  <Project active={true} />
+                ) : (
+                  <Project active={false} />
+                )}
+                {subject === "회사경력" ? (
+                  <Company active={true} />
+                ) : (
+                  <Company active={false} />
+                )}
                 <div>??</div>
                 <div>??</div>
                 <div>??</div>

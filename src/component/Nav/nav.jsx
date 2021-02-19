@@ -1,10 +1,13 @@
-import React, { useCallback, useRef } from "react";
+import React, { useRef } from "react";
 import styles from "./nav.module.css";
 import { useHistory } from "react-router-dom";
-const Nav = (props) => {
+const Nav = ({ setSubject }) => {
   //전체 페이지 크기를 전달받는다.
 
   const history = useHistory();
+
+  const bar = useRef();
+
   const items = useRef([
     React.createRef(),
     React.createRef(),
@@ -14,7 +17,6 @@ const Nav = (props) => {
     React.createRef(),
     React.createRef(),
   ]);
-  const bar = useRef();
   const onClickNav = (e) => {
     e.stopPropagation();
     if (e.target.classList.contains(styles.active)) {
@@ -22,6 +24,9 @@ const Nav = (props) => {
     }
     items.current.forEach((item) => {
       item.current.classList.remove(styles.active);
+      if (item.current === e.target) {
+        setSubject(item.current.innerText);
+      }
     });
     e.target.classList.add(styles.active);
   };

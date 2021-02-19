@@ -52,10 +52,10 @@ const etcSkills = [
   },
 ];
 
-export default function Skill() {
+export default function Skill({ active }) {
   return (
     <>
-      <SubTitle name="기술"></SubTitle>
+      <SubTitle name="기술" active={active}></SubTitle>
       <div className={styles.box}>
         <span className={styles.title}>메인</span>
         <div className={styles.subBox}>
