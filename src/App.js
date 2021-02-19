@@ -8,6 +8,7 @@ import { ImBlogger } from "react-icons/im";
 import mygif from "./img/intro.gif";
 import Nav from "./component/Nav/nav";
 import Introduce from "./component/Introduce/introduce";
+import Skill from "./component/skill/skill";
 function App() {
   const onClickGithub = () => {
     window.open("https://github.com/WachsenHaus");
@@ -59,7 +60,7 @@ function App() {
             <article className={styles.article}>
               <div className={styles.container}>
                 <Introduce></Introduce>
-                <div>??</div>
+                <Skill></Skill>
                 <div>??</div>
                 <div>??</div>
                 <div>??</div>

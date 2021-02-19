@@ -1,0 +1,8 @@
+span {
+  /* display: block; */
+  word-break: break-all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
