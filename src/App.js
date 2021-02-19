@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { BrowserRouter, Switch, NavLink, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import styles from "./app.module.css";
@@ -9,6 +9,8 @@ import mygif from "./img/intro.gif";
 import Nav from "./component/Nav/nav";
 import Introduce from "./component/Introduce/introduce";
 import Skill from "./component/skill/skill";
+import Company from "./component/company/company";
+import Project from "./component/project/project";
 function App() {
   const onClickGithub = () => {
     window.open("https://github.com/WachsenHaus");
@@ -16,6 +18,15 @@ function App() {
   const onClickBlog = () => {
     window.open("https://blog.naver.com/bi9choi");
   };
+  const items = useRef([
+    React.createRef(),
+    React.createRef(),
+    React.createRef(),
+    React.createRef(),
+    React.createRef(),
+    React.createRef(),
+    React.createRef(),
+  ]);
 
   return (
     <div className={styles.app}>
@@ -59,9 +70,10 @@ function App() {
             <Nav></Nav>
             <article className={styles.article}>
               <div className={styles.container}>
-                <Introduce></Introduce>
-                <Skill></Skill>
-                <div>??</div>
+                <Introduce />
+                <Skill />
+                <Project />
+                <Company />
                 <div>??</div>
                 <div>??</div>
                 <div>??</div>

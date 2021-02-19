@@ -31,8 +31,6 @@ const Nav = (props) => {
     });
   };
 
-  const getPercent = useCallback(() => {}, []);
-
   return (
     <>
       <div className={styles.wrapper}>

@@ -1,19 +1,6 @@
-import styled from "styled-components";
+import SubTitle from "../subtitle/subTitle";
 import styles from "./skill.module.css";
 
-const SkillStyle = styled.div`
-  width: 100%;
-  color: rgba(22, 17, 11, 0.61);
-  left: 0;
-  font-size: 2rem;
-  margin-top: 1rem;
-  display: block;
-
-  &:before {
-    content: "기술";
-    border-bottom: medium double rgba(22, 17, 11, 1);
-  }
-`;
 const mainSkills = [
   {
     name: "HTML & CSS",
@@ -67,7 +54,8 @@ const etcSkills = [
 
 export default function Skill() {
   return (
-    <SkillStyle>
+    <>
+      <SubTitle name="기술"></SubTitle>
       <div className={styles.box}>
         <span className={styles.title}>메인</span>
         <div className={styles.subBox}>
@@ -122,6 +110,6 @@ export default function Skill() {
           })}
         </div>
       </div>
-    </SkillStyle>
+    </>
   );
 }

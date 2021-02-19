@@ -1,29 +1,16 @@
 import React from "react";
 import Carousel from "../carousel/carousel";
 import styles from "./introduce.module.css";
-import styled from "styled-components";
-
-const IntroStyle = styled.div`
-  width: 100%;
-  color: rgba(22, 17, 11, 0.61);
-  left: 0;
-  font-size: 2rem;
-  margin-top: 1rem;
-  span {
-    font-size: 1rem;
-    color: rgba(22, 17, 11, 1);
-  }
-  &:before {
-    content: "자기소개";
-    border-bottom: medium double rgba(22, 17, 11, 1);
-  }
-`;
+import SubTitle from "../subtitle/subTitle";
 
 const Introduce = (props) => {
   return (
-    <IntroStyle>
-      <Carousel></Carousel>
-      <span>안녕하세요 좋은 UX 경험을 제공하고 싶은 프론트엔드 개발자 최영훈입니다.</span>
+    <>
+      <SubTitle name="자기소개" active={true}></SubTitle>
+      <Carousel />
+      <span className={styles.span}>
+        안녕하세요 좋은 UX 경험을 제공하고 싶은 프론트엔드 개발자 최영훈입니다.
+      </span>
       <span className={styles.span}>
         4년 동안 다방면의 개발과 업무를 진행하면서, 앞으로 개발 일을 하면서 즐기면서 할 수
         있는 개발이 무엇인지 고민하였습니다.
@@ -43,7 +30,7 @@ const Introduce = (props) => {
       <span className={styles.span}>
         근성과 열정있는 태도로 발전하는 프론트엔드 개발자 최영훈이 되겠습니다
       </span>
-    </IntroStyle>
+    </>
   );
 };
 
