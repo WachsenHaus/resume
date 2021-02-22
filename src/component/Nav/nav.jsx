@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { createRef, forwardRef, useRef } from "react";
+
 import styles from "./nav.module.css";
 import { useHistory } from "react-router-dom";
 const Nav = ({ setSubject }) => {

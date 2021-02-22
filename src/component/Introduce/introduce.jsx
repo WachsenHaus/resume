@@ -3,10 +3,10 @@ import Carousel from "../carousel/carousel";
 import styles from "./introduce.module.css";
 import SubTitle from "../subtitle/subTitle";
 
-const Introduce = ({ active }) => {
+const Introduce = ({ active, name }) => {
   return (
     <>
-      <SubTitle name="자기소개" active={active}></SubTitle>
+      <SubTitle ref={name} name="자기소개" active={active}></SubTitle>
       <Carousel />
       <span className={styles.span}>
         안녕하세요 좋은 UX 경험을 제공하고 싶은 프론트엔드 개발자 최영훈입니다.
