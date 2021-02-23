@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { BrowserRouter, Switch, NavLink, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import styles from "./app.module.css";
@@ -11,17 +11,16 @@ import Introduce from "./component/Introduce/introduce";
 import Skill from "./component/skill/skill";
 import Company from "./component/company/company";
 import Project from "./component/project/project";
+import Content from "./component/content/content";
 
 function App() {
-  const onClickGithub = () => {
-    window.open("https://github.com/WachsenHaus");
-  };
-  const onClickBlog = () => {
-    window.open("https://blog.naver.com/bi9choi");
-  };
+  const SUBJECT_INTRO = "자기소개";
+  const SUBJECT_SKILL = "기술";
+  const SUBJECT_PROJECT = "프로젝트";
+  const SUBJECT_CAREAR = "회사경력";
+  const SUBJECT_CERTIFICATE = "자격증";
+  const SUBJECT_EDUCATION = "교육";
 
-  const [subject, setSubject] = useState();
-  const introRef = useRef();
   const subjectRef = useRef([
     React.createRef(), //더미
     React.createRef(), //자기소개
@@ -31,33 +30,20 @@ function App() {
     React.createRef(), //자격증
     React.createRef(), //교육
   ]);
+  const articleRef = useRef();
 
-  const SUBJECT_INTRO = "자기소개";
-  const SUBJECT_SKILL = "기술";
-  const SUBJECT_PROJECT = "프로젝트";
-  const SUBJECT_CAREAR = "경력";
-  const SUBJECT_CERTIFICATE = "자격증";
-  const SUBJECT_EDUCATION = "교육";
-  //서브젝트가 변경되면 렌더링이 다시 되는데, 그 랜더링 위치로 이동하자.
-  useEffect(() => {
-    switch (subject) {
-      case SUBJECT_INTRO:
-        subjectRef.current[1].current.scrollIntoView({ behavior: "smooth" });
-        console.log(subjectRef.current[1].current);
-        break;
-      case SUBJECT_SKILL:
-        subjectRef.current[2].current.scrollIntoView({ behavior: "smooth" });
-        break;
-      case SUBJECT_PROJECT:
-        subjectRef.current[3].current.scrollIntoView({ behavior: "smooth" });
-        break;
-      case SUBJECT_CAREAR:
-        subjectRef.current[4].current.scrollIntoView({ behavior: "smooth" });
-        break;
-      default:
-        break;
-    }
-  }, [subject]);
+  const [state, setState] = useState({
+    percentage: "0",
+    forceMove: false,
+    subject: null,
+  });
+
+  const onClickGithub = () => {
+    window.open("https://github.com/WachsenHaus");
+  };
+  const onClickBlog = () => {
+    window.open("https://blog.naver.com/bi9choi");
+  };
 
   return (
     <div className={styles.app}>
@@ -98,99 +84,8 @@ function App() {
             </main>
           </Route>
           <Route exact path="/me">
-            <Nav setSubject={setSubject}></Nav>
-            <article className={styles.article}>
-              <div className={styles.container}>
-                <div ref={subjectRef.current[1]}></div>
-                {subject === SUBJECT_INTRO ? (
-                  <Introduce active={true} />
-                ) : (
-                  <Introduce active={false} />
-                )}
-                <div ref={subjectRef.current[2]}></div>
-                {subject === SUBJECT_SKILL ? (
-                  <Skill active={true} />
-                ) : (
-                  <Skill active={false} />
-                )}
-                <div ref={subjectRef.current[3]}></div>
-                {subject === SUBJECT_PROJECT ? (
-                  <Project active={true} />
-                ) : (
-                  <Project active={false} />
-                )}
-                <div ref={subjectRef.current[4]}></div>
-                {subject === SUBJECT_CAREAR ? (
-                  <Company active={true} />
-                ) : (
-                  <Company active={false} />
-                )}
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>끝</div>
-              </div>
-            </article>
+            <Nav state={state} setState={setState}></Nav>
+            <Content state={state} setState={setState}></Content>
           </Route>
         </Switch>
       </BrowserRouter>

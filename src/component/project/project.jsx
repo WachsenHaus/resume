@@ -1,14 +1,25 @@
 import React from "react";
 import SubTitle from "../subtitle/subTitle";
+import styled from "styled-components";
+const ProjectTitleStyle = styled.div`
+  width: 100%;
+  padding: 1rem auto;
+  border: 1px solid black;
+  margin-top: 1rem;
+`;
 
-const Project = ({ active, ref }) => {
+const Project = ({ state }) => {
   return (
     <>
-      <SubTitle ref={ref} name="프로젝트" active={active}></SubTitle>
-      <div>팀 프로젝트</div>
-      <div>개인 프로젝트</div>
-      <div>클론 코딩</div>
-      <div>회사 프로젝트</div>
+      {state && state.subject === "프로젝트" ? (
+        <SubTitle name="프로젝트" active={true}></SubTitle>
+      ) : (
+        <SubTitle name="프로젝트" active={false}></SubTitle>
+      )}
+      <ProjectTitleStyle>팀 프로젝트</ProjectTitleStyle>
+      <ProjectTitleStyle>개인 프로젝트</ProjectTitleStyle>
+      <ProjectTitleStyle>회사 프로젝트</ProjectTitleStyle>
+      <ProjectTitleStyle>클론 코딩</ProjectTitleStyle>
     </>
   );
 };

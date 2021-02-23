@@ -52,10 +52,15 @@ const etcSkills = [
   },
 ];
 
-export default function Skill({ active }) {
+export default function Skill({ state }) {
   return (
     <>
-      <SubTitle name="기술" active={active}></SubTitle>
+      {state && state.subject === "기술" ? (
+        <SubTitle name="기술" active={true}></SubTitle>
+      ) : (
+        <SubTitle name="기술" active={false}></SubTitle>
+      )}
+
       <div className={styles.box}>
         <span className={styles.title}>메인</span>
         <div className={styles.subBox}>
@@ -93,7 +98,7 @@ export default function Skill({ active }) {
         </div>
       </div>
       <div className={styles.box}>
-        <span className={styles.title}>etc</span>
+        <span className={styles.title}>etc.</span>
         <div className={styles.subBox}>
           {etcSkills.map((item) => {
             return (
