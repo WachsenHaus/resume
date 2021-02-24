@@ -32,5 +32,9 @@ const SubtitleStyle = styled.div`
 `;
 
 export default function SubTitle({ name, active }) {
-  return <SubtitleStyle name={name} active={active}></SubtitleStyle>;
+  return (
+    <>
+      <SubtitleStyle name={name} active={active}></SubtitleStyle>
+    </>
+  );
 }

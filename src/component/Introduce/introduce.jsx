@@ -3,10 +3,14 @@ import Carousel from "../carousel/carousel";
 import styles from "./introduce.module.css";
 import SubTitle from "../subtitle/subTitle";
 
-const Introduce = (props) => {
+const Introduce = ({ state }) => {
   return (
     <>
-      <SubTitle name="자기소개" active={true}></SubTitle>
+      {state && state.subject === "자기소개" ? (
+        <SubTitle name="자기소개" active={true}></SubTitle>
+      ) : (
+        <SubTitle name="자기소개" active={false}></SubTitle>
+      )}
       <Carousel />
       <span className={styles.span}>
         안녕하세요 좋은 UX 경험을 제공하고 싶은 프론트엔드 개발자 최영훈입니다.

@@ -115,3 +115,8 @@
   border-radius: 10px;
   box-shadow: inset 0px 0px 5px white;
 }
+
+.nav > h3.active {
+  color: black;
+  transition: color 2s;
+}

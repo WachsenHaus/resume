@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { BrowserRouter, Switch, NavLink, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import styles from "./app.module.css";
@@ -11,22 +11,39 @@ import Introduce from "./component/Introduce/introduce";
 import Skill from "./component/skill/skill";
 import Company from "./component/company/company";
 import Project from "./component/project/project";
+import Content from "./component/content/content";
+
 function App() {
+  const SUBJECT_INTRO = "자기소개";
+  const SUBJECT_SKILL = "기술";
+  const SUBJECT_PROJECT = "프로젝트";
+  const SUBJECT_CAREAR = "회사경력";
+  const SUBJECT_CERTIFICATE = "자격증";
+  const SUBJECT_EDUCATION = "교육";
+
+  const subjectRef = useRef([
+    React.createRef(), //더미
+    React.createRef(), //자기소개
+    React.createRef(), //기술
+    React.createRef(), //프로젝트
+    React.createRef(), //경력
+    React.createRef(), //자격증
+    React.createRef(), //교육
+  ]);
+  const articleRef = useRef();
+
+  const [state, setState] = useState({
+    percentage: "0",
+    forceMove: false,
+    subject: null,
+  });
+
   const onClickGithub = () => {
     window.open("https://github.com/WachsenHaus");
   };
   const onClickBlog = () => {
     window.open("https://blog.naver.com/bi9choi");
   };
-  const items = useRef([
-    React.createRef(),
-    React.createRef(),
-    React.createRef(),
-    React.createRef(),
-    React.createRef(),
-    React.createRef(),
-    React.createRef(),
-  ]);
 
   return (
     <div className={styles.app}>
@@ -67,80 +84,8 @@ function App() {
             </main>
           </Route>
           <Route exact path="/me">
-            <Nav></Nav>
-            <article className={styles.article}>
-              <div className={styles.container}>
-                <Introduce />
-                <Skill />
-                <Project />
-                <Company />
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>??</div>
-                <div>끝</div>
-              </div>
-            </article>
+            <Nav state={state} setState={setState}></Nav>
+            <Content state={state} setState={setState}></Content>
           </Route>
         </Switch>
       </BrowserRouter>
