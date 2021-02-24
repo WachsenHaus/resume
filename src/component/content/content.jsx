@@ -1,8 +1,10 @@
 import React, { useCallback, useEffect, useRef } from "react";
+import Certificate from "../certificate/certificate";
 import Company from "../company/company";
 import Introduce from "../Introduce/introduce";
 import Project from "../project/project";
 import Skill from "../skill/skill";
+import Education from "../education/education";
 import styles from "./content.module.css";
 
 const Content = ({ state, setState }) => {
@@ -20,6 +22,8 @@ const Content = ({ state, setState }) => {
   const SUBJECT_SKILL = "기술";
   const SUBJECT_PROJECT = "프로젝트";
   const SUBJECT_CAREAR = "회사경력";
+  const SUBJECT_CERTIFICATE = "자격증";
+  const SUBJECT_EDUCATION = "교육";
 
   const getPosition = useCallback(
     (forceMove, subject = SUBJECT_INTRO) => {
@@ -31,6 +35,10 @@ const Content = ({ state, setState }) => {
       const skill = parseInt(subjectRef.current[2].current.getBoundingClientRect().y);
       const project = parseInt(subjectRef.current[3].current.getBoundingClientRect().y);
       const carear = parseInt(subjectRef.current[4].current.getBoundingClientRect().y);
+      const certificate = parseInt(
+        subjectRef.current[5].current.getBoundingClientRect().y
+      );
+      const education = parseInt(subjectRef.current[6].current.getBoundingClientRect().y);
       if (forceMove === false) {
         if (intro > 5 && intro <= 250) {
           subject = SUBJECT_INTRO;
@@ -40,6 +48,10 @@ const Content = ({ state, setState }) => {
           subject = SUBJECT_PROJECT;
         } else if (carear > 15 && carear <= 250) {
           subject = SUBJECT_CAREAR;
+        } else if (certificate > 15 && certificate <= 250) {
+          subject = SUBJECT_CERTIFICATE;
+        } else if (education > 15 && education <= 250) {
+          subject = SUBJECT_EDUCATION;
         }
       }
       if (forceMove === true) {
@@ -61,6 +73,16 @@ const Content = ({ state, setState }) => {
             break;
           case SUBJECT_CAREAR:
             if (carear > 5 && carear <= 250) {
+              forceMove = false;
+            }
+            break;
+          case SUBJECT_CERTIFICATE:
+            if (certificate > 5 && certificate <= 250) {
+              forceMove = false;
+            }
+            break;
+          case SUBJECT_EDUCATION:
+            if (education > 5 && education <= 250) {
               forceMove = false;
             }
             break;
@@ -100,6 +122,12 @@ const Content = ({ state, setState }) => {
           break;
         case SUBJECT_CAREAR:
           subjectRef.current[4].current.scrollIntoView({ behavior: "smooth" });
+          break;
+        case SUBJECT_CERTIFICATE:
+          subjectRef.current[5].current.scrollIntoView({ behavior: "smooth" });
+          break;
+        case SUBJECT_EDUCATION:
+          subjectRef.current[6].current.scrollIntoView({ behavior: "smooth" });
           break;
         default:
           break;
@@ -156,6 +184,11 @@ const Content = ({ state, setState }) => {
           <Project state={state} />
           <div ref={subjectRef.current[4]}></div>
           <Company state={state} />
+          <div ref={subjectRef.current[5]}></div>
+          <Certificate state={state}></Certificate>
+          <div ref={subjectRef.current[6]}></div>
+          <Education state={state}></Education>
+
           <div>??</div>
           <div>??</div>
           <div>??</div>
