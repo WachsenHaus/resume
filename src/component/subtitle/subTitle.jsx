@@ -6,7 +6,8 @@ const SubtitleStyle = styled.div`
   color: rgba(22, 17, 11, 0.61);
   left: 0;
   font-size: 2rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   span {
     font-size: 2rem;
     color: rgba(22, 17, 11, 1);
