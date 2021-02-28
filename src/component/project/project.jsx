@@ -9,6 +9,7 @@ const ProjectTitleStyle = styled.div`
 `;
 
 const Project = ({ state }) => {
+  //어쩔꼬
   return (
     <>
       {state && state.subject === "프로젝트" ? (
@@ -17,6 +18,7 @@ const Project = ({ state }) => {
         <SubTitle name="프로젝트" active={false}></SubTitle>
       )}
       <ProjectTitleStyle>팀 프로젝트</ProjectTitleStyle>
+
       <ProjectTitleStyle>개인 프로젝트</ProjectTitleStyle>
       <ProjectTitleStyle>회사 프로젝트</ProjectTitleStyle>
       <ProjectTitleStyle>클론 코딩</ProjectTitleStyle>
