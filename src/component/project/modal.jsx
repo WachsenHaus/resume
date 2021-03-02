@@ -12,9 +12,15 @@ const ModalStyle = styled.div`
   padding: 45px;
   display: block;
   z-index: 1011;
-  display: ${(props) => (props.isVisible ? "block" : "none")};
   pointer-events: ${(props) => (props.isVisible ? "auto" : "none")};
-
+  display: ${(props) => {
+    console.log(props);
+    if (props.index === props.selectedItem && props.isVisible === true) {
+      return "block";
+    } else {
+      return "none";
+    }
+  }};
   .popup-modal__close {
     position: absolute;
     font-size: 2rem;
@@ -23,22 +29,15 @@ const ModalStyle = styled.div`
     cursor: pointer;
   }
 `;
-
-export default function Modal({ isVisible, onSetIsVisible }) {
+const Modal = ({ index, selectedItem, projectContent, isVisible, onSetIsVisible }) => {
+  console.log(index, selectedItem);
   return (
-    <ModalStyle isVisible={isVisible}>
+    <ModalStyle index={index} selectedItem={selectedItem} isVisible={isVisible}>
       <i className="popup-modal__close" onClick={() => onSetIsVisible(false)}>
         <GrClose size={16} />
       </i>
-      <h1>에이콘 Escape</h1>
-      <div>
-        오메메메메
-        <br />
-        우라차차 <br />
-        팝업 내용 123 <br />
-        팝업 내용 123 <br />
-        팝업 내용 123
-      </div>
+      {projectContent}
     </ModalStyle>
   );
-}
+};
+export default Modal;
