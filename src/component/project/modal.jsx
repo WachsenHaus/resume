@@ -12,6 +12,7 @@ const ModalStyle = styled.div`
   padding: 45px;
   display: block;
   z-index: 1011;
+
   pointer-events: ${(props) => (props.isVisible ? "auto" : "none")};
   display: ${(props) => {
     console.log(props);
