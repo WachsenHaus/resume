@@ -38,8 +38,8 @@ function App() {
       </div> */}
       <BrowserRouter>
         <Switch>
-          {/* <Route exact path="/im"> */}
           <Route exact path="/">
+            {/* <Route exact path="/"> */}
             <main className={styles.main}>
               <div className={styles.column}>
                 <CircleMovie img={mygif}></CircleMovie>

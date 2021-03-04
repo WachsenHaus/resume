@@ -12,6 +12,7 @@ const ModalStyle = styled.div`
   padding: 45px;
   display: block;
   z-index: 1011;
+  overflow: auto;
 
   pointer-events: ${(props) => (props.isVisible ? "auto" : "none")};
   display: ${(props) => {
@@ -28,6 +29,21 @@ const ModalStyle = styled.div`
     right: 1rem;
     top: 1rem;
     cursor: pointer;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #555151;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 4px solid transparent;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: rgb(211, 200, 200);
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
   }
 `;
 const Modal = ({ index, selectedItem, projectContent, isVisible, onSetIsVisible }) => {

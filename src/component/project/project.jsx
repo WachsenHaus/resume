@@ -58,38 +58,68 @@ const ProjectItem = ({
 
       <ProjectDetailStyle onClick={onClick}>
         {projectName}
-        <IconStyle
-          onClick={() => {
-            window.open(`${projectLink}`);
-          }}
-        >
-          <AiFillHome />
-        </IconStyle>
-        <IconStyle
-          onClick={() => {
-            window.open(`${projectGit}`);
-          }}
-        >
-          <AiFillGithub />
-        </IconStyle>
+        {projectLink && (
+          <IconStyle
+            onClick={() => {
+              window.open(`${projectLink}`);
+            }}
+          >
+            <AiFillHome />
+          </IconStyle>
+        )}
+        {projectGit && (
+          <IconStyle
+            onClick={() => {
+              window.open(`${projectGit}`);
+            }}
+          >
+            <AiFillGithub />
+          </IconStyle>
+        )}
       </ProjectDetailStyle>
     </>
   );
 };
-const DivStyeld = styled.div``;
 const Item1 = (
-  <DivStyeld>
-    <h1>{"1"}</h1>
-    <h3>...</h3>
-    <h5>asdf</h5>
-  </DivStyeld>
+  <div>
+    <h1>에이콘 이스케이프</h1>
+    <img src="" alt="" />
+    <h3>사용 기술</h3>
+    <span>Java, Javascript, Oracle</span>
+    <h3>개발 목표</h3>
+    <span>
+      기존 상용중인 사이트(큐브이스케이프)를 개선시키는 작업을 목표로 사이트를
+      개발하였습니다.
+    </span>
+    <h3>수행 내용</h3>
+    <span>
+      프로젝트에서 팀장을 맡았으며 동료들이 원하는 페이지를 각자 원하는 기술로 구현하게
+      하였고, 각 브랜치들을 취합하여 프로젝트를 완성하였습니다.
+    </span>
+    <p>역할 : 프로젝트 팀장, GIT 관리, 팀원 코딩 도움</p>
+    <p>작업 내용 : 메인, Escape, 테마, 예약관리, 후기게시판 페이지</p>
+  </div>
 );
 const Item2 = (
-  <DivStyeld>
-    <h1>{"2"}</h1>
+  <div>
+    <h1>Choi 이스케이프</h1>
+    <img src="" alt="" />
+    <h3>사용 기술</h3>
+    <span>Java, Javascript, React, Oracle</span>
+    <h3>개발 목표</h3>
+    <span>학원에서 진행하였던 프로젝트를 React로 변경하여 만들었습니다.</span>
+    <h3>수행 내용</h3>
+    <span>
+      백엔드 서버 재설계 진행 (API) 운영 서버 구축 (Docker compose, tomcat, Linux)
+    </span>
+  </div>
+);
+const Item3 = (
+  <div>
+    <h1>{"3"}</h1>
     <h3>...</h3>
     <h5>asdf</h5>
-  </DivStyeld>
+  </div>
 );
 const Project = ({ state }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -147,8 +177,72 @@ const Project = ({ state }) => {
           projectGit={"https://github.com/WachsenHaus/escape-react-front"}
         ></ProjectItem>
       </ProjectTitleStyle>
-      <ProjectTitleStyle>회사 프로젝트,HLS12,HLS12측정 솔루션</ProjectTitleStyle>
-      <ProjectTitleStyle>클론 코딩, 노마드코더,드림코딩 기타 등등</ProjectTitleStyle>
+      <ProjectTitleStyle>
+        회사 프로젝트
+        <ProjectItem
+          onClick={() => {
+            onSetIsVisible(true);
+            onSetItem(3);
+          }}
+          index={3}
+          projectContent={Item3}
+          isVisible={isVisible}
+          onSetIsVisible={onSetIsVisible}
+          selectedItem={selectedItem}
+          projectName={"HLS12"}
+        ></ProjectItem>
+        <ProjectItem
+          onClick={() => {
+            onSetIsVisible(true);
+            onSetItem(3);
+          }}
+          index={3}
+          projectContent={Item3}
+          isVisible={isVisible}
+          onSetIsVisible={onSetIsVisible}
+          selectedItem={selectedItem}
+          projectName={"HLS12 측정기 솔루션"}
+        ></ProjectItem>
+      </ProjectTitleStyle>
+      <ProjectTitleStyle>
+        클론 코딩
+        <ProjectItem
+          onClick={() => {
+            onSetIsVisible(true);
+            onSetItem(3);
+          }}
+          index={3}
+          projectContent={Item3}
+          isVisible={isVisible}
+          onSetIsVisible={onSetIsVisible}
+          selectedItem={selectedItem}
+          projectName={"Nomad - wetube"}
+        ></ProjectItem>
+        <ProjectItem
+          onClick={() => {
+            onSetIsVisible(true);
+            onSetItem(3);
+          }}
+          index={3}
+          projectContent={Item3}
+          isVisible={isVisible}
+          onSetIsVisible={onSetIsVisible}
+          selectedItem={selectedItem}
+          projectName={"dream coding - js rabbit"}
+        ></ProjectItem>
+        <ProjectItem
+          onClick={() => {
+            onSetIsVisible(true);
+            onSetItem(3);
+          }}
+          index={3}
+          projectContent={Item3}
+          isVisible={isVisible}
+          onSetIsVisible={onSetIsVisible}
+          selectedItem={selectedItem}
+          projectName={"dream coding - react card maker"}
+        ></ProjectItem>
+      </ProjectTitleStyle>
     </>
   );
 };

@@ -1,6 +1,5 @@
 {
-  "homepage": "./",
-  "name": "im",
+  "name": "profile",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -43,5 +42,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/WachsenHaus/wachsenhaus.github.io.git",
+  "author": "Younghoon CHOI _^ <WachsenHaus@gmail.com>",
+  "license": "MIT"
 }
