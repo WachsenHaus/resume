@@ -4,6 +4,7 @@ import styled from "styled-components";
 import BodyBlackout from "./bodyblackout";
 import Modal from "./modal";
 import { AiFillHome, AiFillGithub } from "react-icons/ai";
+import { ItemDetail, Item1, Item2, Item3, Item4, Item6, Item7 } from "./item";
 
 const ProjectTitleStyle = styled.div`
   width: 100%;
@@ -13,7 +14,6 @@ const ProjectTitleStyle = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
 const ProjectDetailStyle = styled.div`
   display: flex;
   justify-contents: center;
@@ -80,47 +80,7 @@ const ProjectItem = ({
     </>
   );
 };
-const Item1 = (
-  <div>
-    <h1>에이콘 이스케이프</h1>
-    <img src="" alt="" />
-    <h3>사용 기술</h3>
-    <span>Java, Javascript, Oracle</span>
-    <h3>개발 목표</h3>
-    <span>
-      기존 상용중인 사이트(큐브이스케이프)를 개선시키는 작업을 목표로 사이트를
-      개발하였습니다.
-    </span>
-    <h3>수행 내용</h3>
-    <span>
-      프로젝트에서 팀장을 맡았으며 동료들이 원하는 페이지를 각자 원하는 기술로 구현하게
-      하였고, 각 브랜치들을 취합하여 프로젝트를 완성하였습니다.
-    </span>
-    <p>역할 : 프로젝트 팀장, GIT 관리, 팀원 코딩 도움</p>
-    <p>작업 내용 : 메인, Escape, 테마, 예약관리, 후기게시판 페이지</p>
-  </div>
-);
-const Item2 = (
-  <div>
-    <h1>Choi 이스케이프</h1>
-    <img src="" alt="" />
-    <h3>사용 기술</h3>
-    <span>Java, Javascript, React, Oracle</span>
-    <h3>개발 목표</h3>
-    <span>학원에서 진행하였던 프로젝트를 React로 변경하여 만들었습니다.</span>
-    <h3>수행 내용</h3>
-    <span>
-      백엔드 서버 재설계 진행 (API) 운영 서버 구축 (Docker compose, tomcat, Linux)
-    </span>
-  </div>
-);
-const Item3 = (
-  <div>
-    <h1>{"3"}</h1>
-    <h3>...</h3>
-    <h5>asdf</h5>
-  </div>
-);
+
 const Project = ({ state }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedItem, setSelectedItem] = useState(0);
@@ -182,10 +142,10 @@ const Project = ({ state }) => {
         <ProjectItem
           onClick={() => {
             onSetIsVisible(true);
-            onSetItem(3);
+            onSetItem(4);
           }}
-          index={3}
-          projectContent={Item3}
+          index={4}
+          projectContent={Item4}
           isVisible={isVisible}
           onSetIsVisible={onSetIsVisible}
           selectedItem={selectedItem}
@@ -221,10 +181,10 @@ const Project = ({ state }) => {
         <ProjectItem
           onClick={() => {
             onSetIsVisible(true);
-            onSetItem(3);
+            onSetItem(6);
           }}
-          index={3}
-          projectContent={Item3}
+          index={6}
+          projectContent={Item6}
           isVisible={isVisible}
           onSetIsVisible={onSetIsVisible}
           selectedItem={selectedItem}
@@ -233,10 +193,10 @@ const Project = ({ state }) => {
         <ProjectItem
           onClick={() => {
             onSetIsVisible(true);
-            onSetItem(3);
+            onSetItem(7);
           }}
-          index={3}
-          projectContent={Item3}
+          index={7}
+          projectContent={Item7}
           isVisible={isVisible}
           onSetIsVisible={onSetIsVisible}
           selectedItem={selectedItem}

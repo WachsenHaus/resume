@@ -3,7 +3,7 @@ import Carousel from "../carousel/carousel";
 import styles from "./introduce.module.css";
 import SubTitle from "../subtitle/subTitle";
 
-const Introduce = ({ state }) => {
+const Introduce = ({ images, state }) => {
   return (
     <>
       {state && state.subject === "자기소개" ? (
@@ -11,7 +11,7 @@ const Introduce = ({ state }) => {
       ) : (
         <SubTitle name="자기소개" active={false}></SubTitle>
       )}
-      <Carousel />
+      <Carousel images={images} />
       <span className={styles.span}>
         안녕하세요 좋은 UX 경험을 제공하고 싶은 프론트엔드 개발자 최영훈입니다.
       </span>

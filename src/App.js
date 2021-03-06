@@ -9,6 +9,12 @@ import mygif from "./img/intro.gif";
 import Nav from "./component/Nav/nav";
 import Content from "./component/content/content";
 import Footer from "./component/footer/footer";
+import image1 from "../src/img/image1.jpg";
+import image2 from "../src/img/image2.jpg";
+import image3 from "../src/img/image3.jpg";
+import image4 from "../src/img/image4.jpg";
+import image5 from "../src/img/image5.jpg";
+const images = [image1, image2, image3, image4, image5]; //프로필이미지
 
 function App() {
   const [state, setState] = useState({
@@ -64,7 +70,7 @@ function App() {
           </Route>
           <Route exact path="/me">
             <Nav state={state} setState={setState}></Nav>
-            <Content state={state} setState={setState}></Content>
+            <Content images={images} state={state} setState={setState}></Content>
             <Footer></Footer>
           </Route>
         </Switch>

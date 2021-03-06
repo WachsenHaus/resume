@@ -7,7 +7,7 @@ import Skill from "../skill/skill";
 import Education from "../education/education";
 import styles from "./content.module.css";
 
-const Content = ({ state, setState }) => {
+const Content = ({ images, state, setState }) => {
   const articleRef = useRef();
   const subjectRef = useRef([
     React.createRef(), //더미
@@ -177,7 +177,7 @@ const Content = ({ state, setState }) => {
       <article className={styles.article} ref={articleRef}>
         <div className={styles.container}>
           <div ref={subjectRef.current[1]}></div>
-          <Introduce state={state} />
+          <Introduce images={images} state={state} />
           <div ref={subjectRef.current[2]}></div>
           <Skill state={state} />
           <div ref={subjectRef.current[3]}></div>

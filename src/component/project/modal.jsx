@@ -46,8 +46,8 @@ const ModalStyle = styled.div`
     box-shadow: inset 0px 0px 5px white;
   }
 `;
+
 const Modal = ({ index, selectedItem, projectContent, isVisible, onSetIsVisible }) => {
-  console.log(index, selectedItem);
   return (
     <ModalStyle index={index} selectedItem={selectedItem} isVisible={isVisible}>
       <i className="popup-modal__close" onClick={() => onSetIsVisible(false)}>

@@ -2,12 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import Item from "./item";
 import Button from "./button";
-import image1 from "../../img/image1.jpg";
-import image2 from "../../img/image2.jpg";
-import image3 from "../../img/image3.jpg";
-import image4 from "../../img/image4.jpg";
-import image5 from "../../img/image5.jpg";
-const images = [image1, image2, image3, image4, image5];
+
 const CarouselStyle = styled.div`
   display: flex;
   justify-content: center;
@@ -28,12 +23,27 @@ const CarouselStyle = styled.div`
     transform-style: preserve-3d;
   }
 `;
-
-export default function Carousel() {
-  const totalItems = 5;
+const Carousel = ({ images }) => {
+  const totalItems = images.length;
   const [current, setCurrent] = useState(0);
 
   const isMoving = useRef(false);
+  const ItemList = images.map((item, index) => {
+    const key = `item_${index}`;
+
+    const prev = current === 0 ? totalItems - 1 : current - 1;
+    const next = current === totalItems - 1 ? 0 : current + 1;
+
+    return (
+      <Item
+        src={item}
+        key={key}
+        active={index === current}
+        prev={index === prev}
+        next={index === next}
+      />
+    );
+  });
 
   useEffect(() => {
     isMoving.current = true;
@@ -41,7 +51,10 @@ export default function Carousel() {
       isMoving.current = false;
     }, 500);
   }, [current]);
-
+  useEffect(() => {
+    if (!!images) {
+    }
+  }, []);
   const moveNext = () => {
     if (!isMoving.current) {
       if (current === totalItems - 1) {
@@ -62,23 +75,6 @@ export default function Carousel() {
     }
   };
 
-  const ItemList = images.map((item, index) => {
-    const key = `item_${index}`;
-
-    const prev = current === 0 ? totalItems - 1 : current - 1;
-    const next = current === totalItems - 1 ? 0 : current + 1;
-
-    return (
-      <Item
-        src={item}
-        key={key}
-        active={index === current}
-        prev={index === prev}
-        next={index === next}
-      />
-    );
-  });
-
   return (
     <CarouselStyle>
       <div className="carousel">
@@ -89,4 +85,6 @@ export default function Carousel() {
       </div>
     </CarouselStyle>
   );
-}
+};
+
+export default Carousel;
