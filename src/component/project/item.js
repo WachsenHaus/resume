@@ -69,7 +69,6 @@ export const Item1 = (
   <div>
     <ProjectDetailTitleStyled>에이콘 이스케이프</ProjectDetailTitleStyled>
     <img
-      // src="https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/escape_jsp_y8szx7.wepb"
       src="https://res.cloudinary.com/dmglufkmz/image/upload/v1614955539/escape_jsp_y8szx7.gif"
       alt="에이콘 이스케이프 사진입니다"
       style={{
@@ -94,11 +93,12 @@ export const Item1 = (
 export const Item2 = (
   <div>
     <ProjectDetailTitleStyled>Choi 이스케이프</ProjectDetailTitleStyled>
-    <Carousel
-      images={[
-        "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/cardmaker1_k4gcr5.webp",
-        "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/cardmaker2_gio3dt.webp",
-      ]}
+    <img
+      src="https://res.cloudinary.com/dmglufkmz/image/upload/v1614955539/escape_react_pns4wh.gif"
+      alt="CHOI 이스케이프 사진입니다"
+      style={{
+        width: "100%",
+      }}
     />
     <h3>사용 기술</h3>
     <span>Java, Javascript, React, Oracle</span>
@@ -107,8 +107,8 @@ export const Item2 = (
     <h3>수행 내용</h3>
     <p>
       프로젝트 모든 내용 진행 <br />
-      백엔드 서버 재설계 진행 (API) 운영 서버 구축 (Docker compose, tomcat, Linux) <br />
-      프론트엔드 REACT로 개발 진행함.
+      백엔드 서버 재설계 진행 (API), 운영 서버 구축 (Docker compose, tomcat, Linux) <br />
+      프론트엔드 REACT로 개발 진행함
       <br />
     </p>
   </div>
@@ -142,11 +142,6 @@ export const Item3 = (
 export const Item4 = (
   <div>
     <ProjectDetailTitleStyled>HLS12 PC GUI</ProjectDetailTitleStyled>
-    {/* <img
-      src="https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/rabbit_sfbjrs.gif"
-      art="프로젝트"
-      style={{ width: "100%" }}
-    ></img> */}
     <div
       style={{
         display: "flex",
@@ -181,34 +176,26 @@ export const Item4 = (
 export const Item5 = (
   <div>
     <ProjectDetailTitleStyled>Nomad - wetube</ProjectDetailTitleStyled>
-    <Carousel
-      images={[
-        "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/리니어서보1_fv4ano.webp",
-        "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/20190723_144051_mavupf.webp",
-      ]}
+    <img
+      // src="https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/escape_jsp_y8szx7.wepb"
+      src="https://res.cloudinary.com/dmglufkmz/image/upload/v1614955539/wetube_tnstew.gif"
+      alt="wetube gif 이미지입니다"
+      style={{
+        width: "100%",
+      }}
     />
     <h3>사용 기술</h3>
-    <span>FPCB 회로개발</span>
+    <span>javascript,html,css heroku</span>
     <h3>개발 목표</h3>
-    <p>리니어서보 개발을 위한 회로를 개발한다. </p>
-    <h3>수행 내용</h3>
-    <p>
-      기존 일반 서보모터의 PCB를 FPCB로 재설계하였음.
-      <br />
-      제품에 사용할 모터 채택과 pcb를 개발하여 제품을 완성하였음.
-      <br />
-      제품의 회로파트를 담당였음.
-      <br />
-    </p>
+    <p>노마드코더의 wetube를 클론코딩하며 능력을 함양한다. </p>
   </div>
 );
 export const Item6 = (
   <div>
     <ProjectDetailTitleStyled>Dream coding - rabbit</ProjectDetailTitleStyled>
     <img
-      // src="https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/escape_jsp_y8szx7.wepb"
       src="https://res.cloudinary.com/dmglufkmz/image/upload/v1614845518/rabbit_sfbjrs.gif"
-      alt="에이콘 이스케이프 사진입니다"
+      alt="rabbit gif 이미지입니다"
       style={{
         width: "100%",
       }}
@@ -231,15 +218,16 @@ export const Item6 = (
 export const Item7 = (
   <div>
     <ProjectDetailTitleStyled>Dream coding - card maker</ProjectDetailTitleStyled>
-    <Carousel
-      images={[
-        "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/리니어서보1_fv4ano.webp",
-        "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/20190723_144051_mavupf.webp",
-      ]}
+    <img
+      src="https://res.cloudinary.com/dmglufkmz/image/upload/v1614845518/card_txzfm9.gif"
+      alt="카드메이커 GIF 이미지입니다"
+      style={{
+        width: "100%",
+      }}
     />
     <h3>사용 기술</h3>
     <span>react, javascript, firebase</span>
     <h3>개발 목표</h3>
-    <p>드림코딩의 react과정 프로젝트를 클론코딩한다. </p>
+    <p>드림코딩의 react과정 프로젝트를 클론코딩하며 자바스크립트 능력을 함양한다. </p>
   </div>
 );
