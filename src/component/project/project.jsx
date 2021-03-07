@@ -4,7 +4,7 @@ import styled from "styled-components";
 import BodyBlackout from "./bodyblackout";
 import Modal from "./modal";
 import { AiFillHome, AiFillGithub } from "react-icons/ai";
-import { ItemDetail, Item1, Item2, Item3, Item4, Item6, Item7 } from "./item";
+import { ItemDetail, Item1, Item2, Item3, Item4, Item5, Item6, Item7 } from "./item";
 
 const ProjectTitleStyle = styled.div`
   width: 100%;
@@ -142,10 +142,10 @@ const Project = ({ state }) => {
         <ProjectItem
           onClick={() => {
             onSetIsVisible(true);
-            onSetItem(4);
+            onSetItem(3);
           }}
-          index={4}
-          projectContent={Item4}
+          index={3}
+          projectContent={Item3}
           isVisible={isVisible}
           onSetIsVisible={onSetIsVisible}
           selectedItem={selectedItem}
@@ -154,10 +154,10 @@ const Project = ({ state }) => {
         <ProjectItem
           onClick={() => {
             onSetIsVisible(true);
-            onSetItem(3);
+            onSetItem(4);
           }}
-          index={3}
-          projectContent={Item3}
+          index={4}
+          projectContent={Item4}
           isVisible={isVisible}
           onSetIsVisible={onSetIsVisible}
           selectedItem={selectedItem}
@@ -169,10 +169,10 @@ const Project = ({ state }) => {
         <ProjectItem
           onClick={() => {
             onSetIsVisible(true);
-            onSetItem(3);
+            onSetItem(5);
           }}
-          index={3}
-          projectContent={Item3}
+          index={5}
+          projectContent={Item5}
           isVisible={isVisible}
           onSetIsVisible={onSetIsVisible}
           selectedItem={selectedItem}

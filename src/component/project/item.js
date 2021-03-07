@@ -116,6 +116,31 @@ export const Item2 = (
 
 export const Item3 = (
   <div>
+    <ProjectDetailTitleStyled>HLS12</ProjectDetailTitleStyled>
+    <Carousel
+      images={[
+        "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/리니어서보1_fv4ano.webp",
+        "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/20190723_144051_mavupf.webp",
+      ]}
+    />
+    <h3>사용 기술</h3>
+    <span>FPCB 회로개발</span>
+    <h3>개발 목표</h3>
+    <p>리니어서보 개발을 위한 회로를 개발한다. </p>
+    <h3>수행 내용</h3>
+    <p>
+      기존 일반 서보모터의 PCB를 FPCB로 재설계하였음.
+      <br />
+      제품에 사용할 모터 채택과 pcb를 개발하여 제품을 완성하였음.
+      <br />
+      제품의 회로파트를 담당였음.
+      <br />
+    </p>
+  </div>
+);
+
+export const Item4 = (
+  <div>
     <ProjectDetailTitleStyled>HLS12 PC GUI</ProjectDetailTitleStyled>
     {/* <img
       src="https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/rabbit_sfbjrs.gif"
@@ -152,9 +177,10 @@ export const Item3 = (
     </p>
   </div>
 );
-export const Item4 = (
+
+export const Item5 = (
   <div>
-    <ProjectDetailTitleStyled>HLS12</ProjectDetailTitleStyled>
+    <ProjectDetailTitleStyled>Nomad - wetube</ProjectDetailTitleStyled>
     <Carousel
       images={[
         "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/리니어서보1_fv4ano.webp",
@@ -176,10 +202,9 @@ export const Item4 = (
     </p>
   </div>
 );
-
 export const Item6 = (
   <div>
-    <ProjectDetailTitleStyled>rabbit</ProjectDetailTitleStyled>
+    <ProjectDetailTitleStyled>Dream coding - rabbit</ProjectDetailTitleStyled>
     <img
       // src="https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/escape_jsp_y8szx7.wepb"
       src="https://res.cloudinary.com/dmglufkmz/image/upload/v1614845518/rabbit_sfbjrs.gif"
@@ -188,7 +213,6 @@ export const Item6 = (
         width: "100%",
       }}
     />
-    <h1>dd</h1>
     <h3>사용 기술</h3>
     <span>FPCB 회로개발</span>
     <h3>개발 목표</h3>
@@ -206,7 +230,7 @@ export const Item6 = (
 );
 export const Item7 = (
   <div>
-    <ProjectDetailTitleStyled>rabbit</ProjectDetailTitleStyled>
+    <ProjectDetailTitleStyled>Dream coding - card maker</ProjectDetailTitleStyled>
     <Carousel
       images={[
         "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/리니어서보1_fv4ano.webp",
@@ -214,17 +238,8 @@ export const Item7 = (
       ]}
     />
     <h3>사용 기술</h3>
-    <span>FPCB 회로개발</span>
+    <span>react, javascript, firebase</span>
     <h3>개발 목표</h3>
-    <p>리니어서보 개발을 위한 회로를 개발한다. </p>
-    <h3>수행 내용</h3>
-    <p>
-      기존 일반 서보모터의 PCB를 FPCB로 재설계하였음.
-      <br />
-      제품에 사용할 모터 채택과 pcb를 개발하여 제품을 완성하였음.
-      <br />
-      제품의 회로파트를 담당였음.
-      <br />
-    </p>
+    <p>드림코딩의 react과정 프로젝트를 클론코딩한다. </p>
   </div>
 );
