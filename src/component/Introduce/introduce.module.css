@@ -1,5 +1,4 @@
 .span {
-  /* display: block; */
   word-break: break-all;
   display: flex;
   justify-content: center;

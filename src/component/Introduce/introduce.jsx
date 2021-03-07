@@ -13,7 +13,7 @@ const Introduce = ({ images, state }) => {
       )}
       <Carousel images={images} />
       <span className={styles.span}>
-        안녕하세요 좋은 UX 경험을 제공하고 싶은 프론트엔드 개발자 최영훈입니다.
+        안녕하세요 좋은 UX 경험을 제공하고 싶은 프론트엔드 개발자 최영훈(29)입니다.
       </span>
       <span className={styles.span}>
         4년 동안 다방면의 개발과 업무를 진행하면서, 앞으로 개발 일을 하면서 즐기면서 할 수

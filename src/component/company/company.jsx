@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const CarearStyle = styled.span`
   width: 100%;
-  // border-top: 0.1px solid black;
   margin-top: 1rem;
   position: relative;
 `;
@@ -13,10 +12,10 @@ const CarearTitleStyle = styled.div`
   font-size: 1rem;
   font-weight: bold;
   position: relative;
+  display: flex;
+  justify-content: space-between;
 `;
 const CarearSubTitleStyle = styled.span`
-  right: 5rem;
-  position: absolute;
   font-size: 0.7rem;
   color: rgba(0, 0, 0, 0.5);
 `;

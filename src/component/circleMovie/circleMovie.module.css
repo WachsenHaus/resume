@@ -22,9 +22,6 @@
   height: 10rem;
   border-radius: 50%;
   border: 0.1rem solid rgb(9, 105, 17);
-  /* animation-name: circleRotate;
-  animation-duration: 1.2s;
-  animation-iteration-count: infinite; */
 }
 
 @keyframes circleRotate {

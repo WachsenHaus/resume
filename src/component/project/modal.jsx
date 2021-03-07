@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { GrClose } from "react-icons/gr";
 
 const ModalStyle = styled.div`
-  height: 365px;
-  width: 650px;
+  height: 50vh;
+  width: 65vw;
   background-color: #fff;
   position: absolute;
   left: 50%;
@@ -16,7 +16,6 @@ const ModalStyle = styled.div`
 
   pointer-events: ${(props) => (props.isVisible ? "auto" : "none")};
   display: ${(props) => {
-    console.log(props);
     if (props.index === props.selectedItem && props.isVisible === true) {
       return "block";
     } else {

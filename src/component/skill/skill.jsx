@@ -64,9 +64,9 @@ export default function Skill({ state }) {
       <div className={styles.box}>
         <span className={styles.title}>메인</span>
         <div className={styles.subBox}>
-          {mainSkills.map((item) => {
+          {mainSkills.map((item, index) => {
             return (
-              <div className={styles.skill}>
+              <div className={styles.skill} key={`main index_${index}`}>
                 <div>{item.name}</div>
                 <progress
                   className={styles.progressTag}
@@ -82,9 +82,9 @@ export default function Skill({ state }) {
       <div className={styles.box}>
         <span className={styles.title}>서브</span>
         <div className={styles.subBox}>
-          {subSkills.map((item) => {
+          {subSkills.map((item, index) => {
             return (
-              <div className={styles.skill}>
+              <div className={styles.skill} key={`sub index_${index}`}>
                 <div>{item.name}</div>
                 <progress
                   className={styles.progressTag}
@@ -100,9 +100,9 @@ export default function Skill({ state }) {
       <div className={styles.box}>
         <span className={styles.title}>etc.</span>
         <div className={styles.subBox}>
-          {etcSkills.map((item) => {
+          {etcSkills.map((item, index) => {
             return (
-              <div className={styles.skill}>
+              <div className={styles.skill} key={`etc index_${index}`}>
                 <div>{item.name}</div>
                 <progress
                   className={styles.progressTag}

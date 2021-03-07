@@ -7,8 +7,8 @@ const CarouselStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  // overflow: hidden;
-  width: 20rem;
+  overflow: hidden;
+  width: 100%;
   height: 20rem;
   margin: auto;
   * {

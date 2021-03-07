@@ -27,10 +27,6 @@ const Content = ({ images, state, setState }) => {
 
   const getPosition = useCallback(
     (forceMove, subject = SUBJECT_INTRO) => {
-      // console.log(subjectRef.current[1].current);
-      // if (!subjectRef.current[1].current) {
-      //   return;
-      // }
       const intro = parseInt(subjectRef.current[1].current.getBoundingClientRect().y);
       const skill = parseInt(subjectRef.current[2].current.getBoundingClientRect().y);
       const project = parseInt(subjectRef.current[3].current.getBoundingClientRect().y);
@@ -40,17 +36,17 @@ const Content = ({ images, state, setState }) => {
       );
       const education = parseInt(subjectRef.current[6].current.getBoundingClientRect().y);
       if (forceMove === false) {
-        if (intro > 5 && intro <= 250) {
+        if (intro > 3 && intro <= 250) {
           subject = SUBJECT_INTRO;
-        } else if (skill > 15 && skill <= 250) {
+        } else if (skill > 3 && skill <= 250) {
           subject = SUBJECT_SKILL;
-        } else if (project > 15 && project <= 250) {
+        } else if (project > 3 && project <= 250) {
           subject = SUBJECT_PROJECT;
-        } else if (carear > 15 && carear <= 250) {
+        } else if (carear > 3 && carear <= 250) {
           subject = SUBJECT_CAREAR;
-        } else if (certificate > 15 && certificate <= 250) {
+        } else if (certificate > 3 && certificate <= 250) {
           subject = SUBJECT_CERTIFICATE;
-        } else if (education > 15 && education <= 250) {
+        } else if (education > 3 && education <= 250) {
           subject = SUBJECT_EDUCATION;
         }
       }

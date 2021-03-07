@@ -62,8 +62,9 @@ const Section = styled.section`
 const Div = styled.section`
   width: 100%;
   margin-top: 2rem;
+  font-size: 0.9rem;
   line-height: 1.6;
-
+  overflow: auto;
   &: last-child {
     margin-top: 1rem;
     margin-bottom: 1rem;

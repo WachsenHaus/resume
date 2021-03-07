@@ -154,9 +154,9 @@ export const Item4 = (
         height="315"
         title="HLS12 PC GUI"
         src="https://www.youtube.com/embed/q-asGOQOAeo"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       ></iframe>
     </div>
     <h3>사용 기술</h3>

@@ -1,5 +1,4 @@
 .container {
-  /* padding: 0 500px; */
   width: 80%;
   display: flex;
   align-items: center;
@@ -8,7 +7,7 @@
 }
 
 .article {
-  height: 80vh;
+  height: 80%;
   top: 0;
   overflow: auto;
   display: flex;
