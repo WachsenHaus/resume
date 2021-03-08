@@ -36,49 +36,49 @@ const Content = ({ images, state, setState }) => {
       );
       const education = parseInt(subjectRef.current[6].current.getBoundingClientRect().y);
       if (forceMove === false) {
-        if (intro > 3 && intro <= 250) {
+        if (intro >= 0 && intro <= 250) {
           subject = SUBJECT_INTRO;
-        } else if (skill > 3 && skill <= 250) {
+        } else if (skill >= 0 && skill <= 250) {
           subject = SUBJECT_SKILL;
-        } else if (project > 3 && project <= 250) {
+        } else if (project >= 0 && project <= 250) {
           subject = SUBJECT_PROJECT;
-        } else if (carear > 3 && carear <= 250) {
+        } else if (carear >= 0 && carear <= 250) {
           subject = SUBJECT_CAREAR;
-        } else if (certificate > 3 && certificate <= 250) {
+        } else if (certificate >= 0 && certificate <= 250) {
           subject = SUBJECT_CERTIFICATE;
-        } else if (education > 3 && education <= 250) {
+        } else if (education >= 0 && education <= 250) {
           subject = SUBJECT_EDUCATION;
         }
       }
       if (forceMove === true) {
         switch (state.subject) {
           case SUBJECT_INTRO:
-            if (intro > 5 && intro <= 250) {
+            if (intro >= 0 && intro <= 250) {
               forceMove = false;
             }
             break;
           case SUBJECT_SKILL:
-            if (skill > 5 && skill <= 250) {
+            if (skill >= 0 && skill <= 250) {
               forceMove = false;
             }
             break;
           case SUBJECT_PROJECT:
-            if (project > 5 && project <= 250) {
+            if (project >= 0 && project <= 250) {
               forceMove = false;
             }
             break;
           case SUBJECT_CAREAR:
-            if (carear > 5 && carear <= 250) {
+            if (carear >= 0 && carear <= 250) {
               forceMove = false;
             }
             break;
           case SUBJECT_CERTIFICATE:
-            if (certificate > 5 && certificate <= 250) {
+            if (certificate >= 0 && certificate <= 250) {
               forceMove = false;
             }
             break;
           case SUBJECT_EDUCATION:
-            if (education > 5 && education <= 250) {
+            if (education >= 0 && education <= 250) {
               forceMove = false;
             }
             break;
@@ -131,8 +131,12 @@ const Content = ({ images, state, setState }) => {
     }
   }, [state.subject]);
 
+  // const onScroll = () => {
+  //   articleRef.current && articleRef.current.addEventListener("scroll", onScrollCallback);
+  // };
   const onScroll = () => {
-    articleRef.current && articleRef.current.addEventListener("scroll", onScrollCallback);
+    articleRef.current &&
+      articleRef.current.addEventListener("scroll", throttle(onScrollCallback, 16));
   };
   const onScrollCallback = useCallback(() => {
     let scrollHeight = articleRef.current.clientHeight;

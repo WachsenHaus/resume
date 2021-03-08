@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, memo, useCallback } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 
 import styles from "./nav.module.css";
 import { useHistory } from "react-router-dom";

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BrowserRouter, Switch, NavLink, Route } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import styles from "./app.module.css";
 import CircleMovie from "./component/circleMovie/circleMovie";
 import { AiOutlineGithub, AiOutlineSearch } from "react-icons/ai";
@@ -9,13 +8,44 @@ import Nav from "./component/Nav/nav";
 import Content from "./component/content/content";
 import Footer from "./component/footer/footer";
 
-const images = [
+function checkMobile() {
+  var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
+
+  if (varUA.indexOf("android") > -1) {
+    //안드로이드
+    return "android";
+  } else if (
+    varUA.indexOf("iphone") > -1 ||
+    varUA.indexOf("ipad") > -1 ||
+    varUA.indexOf("ipod") > -1
+  ) {
+    //IOS
+    return "ios";
+  } else {
+    //아이폰, 안드로이드 외
+    return "other";
+  }
+}
+const mobile = checkMobile();
+console.log(mobile);
+
+let images = [
   "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/image1_evwpzo.webp",
   "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/image2_ayfvpt.webp",
   "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/image3_t34syn.webp",
   "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/image4_fnv9f9.webp",
   "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/image5_qym7tj.webp",
 ]; //프로필이미지
+
+if (mobile === "ios") {
+  images = [
+    "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/image1_evwpzo.png",
+    "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/image2_ayfvpt.png",
+    "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/image3_t34syn.png",
+    "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/image4_fnv9f9.png",
+    "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/image5_qym7tj.png",
+  ]; //프로필이미지
+}
 
 function App() {
   const [state, setState] = useState({
