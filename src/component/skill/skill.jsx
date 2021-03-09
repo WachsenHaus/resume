@@ -87,7 +87,7 @@ export default function Skill({ state }) {
               <div className={styles.skill} key={`sub index_${index}`}>
                 <div>{item.name}</div>
                 <progress
-                  className={styles.progressTag}
+                  className={`${styles.progressTag} ${styles.progressSub}`}
                   value={`${item.expert}`}
                   max="100"
                 ></progress>
@@ -105,7 +105,7 @@ export default function Skill({ state }) {
               <div className={styles.skill} key={`etc index_${index}`}>
                 <div>{item.name}</div>
                 <progress
-                  className={styles.progressTag}
+                  className={`${styles.progressTag} ${styles.progressEtc}`}
                   value={`${item.expert}`}
                   max="100"
                 ></progress>

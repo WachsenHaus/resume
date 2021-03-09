@@ -7,12 +7,12 @@ const FooterStyle = styled.footer`
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 15%;
+  height: 5%;
   &:hover {
     cursor: pointer;
   }
   // border-top: 1px solid black;
-  font-size: 2rem;
+  font-size: 1rem;
 
   -webkit-animation: text-pop-up-top 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite
     alternate both;

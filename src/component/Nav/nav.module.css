@@ -1,11 +1,9 @@
-.wrapper {
-  height: 5%;
-}
 .nav {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  flex-wrap: wrap;
   top: 0;
   width: 100%;
   height: 100%;
@@ -15,6 +13,7 @@
   color: gray;
   cursor: pointer;
 }
+
 .nav > h3::after {
   content: "";
   width: 1rem;
@@ -27,6 +26,7 @@
   color: black;
   transition: color 0.6s;
 }
+
 .progress {
   position: absolute;
   width: 100%;
@@ -40,6 +40,16 @@
   height: 100%;
   background-color: #555151;
 }
+
+.lastTag::after {
+  content: none;
+  display: none;
+}
+nav > h3:last-child::after {
+  display: none;
+  content: none;
+}
+
 /* PC , 테블릿 가로 (해상도 768px ~ 1023px)*/
 @media all and (min-width: 768px) and (max-width: 1023px) {
   h3 {

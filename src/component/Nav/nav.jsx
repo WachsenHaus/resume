@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useCallback } from "react";
-
 import styles from "./nav.module.css";
 import { useHistory } from "react-router-dom";
 import Bar from "./bar";
@@ -70,7 +69,7 @@ const Nav = ({ state, setState }) => {
 
   return (
     <>
-      <div className={styles.wrapper}>
+      <div>
         <nav className={styles.nav} onClick={onClickNav}>
           <h3 className={styles.active} ref={items.current[0]} onClick={onClickHome}>
             Home
@@ -80,7 +79,9 @@ const Nav = ({ state, setState }) => {
           <h3 ref={items.current[3]}>프로젝트</h3>
           <h3 ref={items.current[4]}>회사경력</h3>
           <h3 ref={items.current[5]}>자격증</h3>
-          <h3 ref={items.current[6]}>교육</h3>
+          <h3 className={`${styles.lastTag}`} ref={items.current[6]}>
+            교육
+          </h3>
           <Bar state={state}></Bar>
         </nav>
       </div>

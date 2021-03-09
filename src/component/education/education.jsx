@@ -3,12 +3,12 @@ import SubTitle from "../subtitle/subTitle";
 import styled from "styled-components";
 
 const CardStyle = styled.div`
-  width: 40%;
+  width: 45%;
   height: 25rem;
   padding: 1rem;
-  //   border: 1px solid #2d3436;
   margin-top: 1rem;
-
+  font-size: small;
+  text-align: center;
   color: #636e72;
   -webkit-box-shadow: 5px 10px 15px 0px rgba(168, 168, 168, 0.76);
   box-shadow: 5px 10px 15px 0px rgba(168, 168, 168, 0.76);
@@ -60,11 +60,13 @@ const Section = styled.section`
 `;
 
 const Div = styled.section`
+  border-top: 1px solid black;
   width: 100%;
   margin-top: 2rem;
   font-size: 0.9rem;
   line-height: 1.6;
   overflow: auto;
+  text-align: left;
   &: last-child {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -81,7 +83,8 @@ const Education = ({ state }) => {
       )}
       <Section>
         <CardStyle date="2020/04 ~ 2020/10">
-          💻자바 개발자 양성과정 - 에이콘아카데미
+          💻 자바 개발자 양성과정 <br />
+          에이콘아카데미
           <Div>
             백엔드 <br />
             - java <br />
@@ -97,7 +100,9 @@ const Education = ({ state }) => {
           </Div>
         </CardStyle>
         <CardStyle date="2019/05 ~ 2019/08">
-          💻프로그래밍 입문(C#) - POCU 아카데미
+          💻 프로그래밍 입문(C#)
+          <br />
+          POCU 아카데미
           <Div>
             1. 기본자료형 <br />
             2. 연산자 & 문자열 <br />
@@ -113,7 +118,7 @@ const Education = ({ state }) => {
           </Div>
         </CardStyle>
         <CardStyle date="2017/11">
-          💻ARM Cortex-M 구조 및 주변장치 실무 - 부천산업진흥재단
+          💻 ARM Cortex-M 구조 및 주변장치 실무 <br /> 부천산업진흥재단
           <Div>
             Cortex-M3 프로세서의 개요 <br />
             - STM32F10x 마이크로컨트롤러의 구조 <br />
@@ -132,7 +137,7 @@ const Education = ({ state }) => {
           </Div>
         </CardStyle>
         <CardStyle date="2016/08">
-          🔌멜섹Q-프로그래밍 향상 -부천PLC교육 전자학원
+          🔌 멜섹Q-프로그래밍 향상 <br /> 부천PLC교육 전자학원
           <Div>
             미쯔비시사 PLC 멜섹Q 프로그래밍 교육이수.
             <br />

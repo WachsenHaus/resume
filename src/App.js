@@ -27,7 +27,6 @@ function checkMobile() {
   }
 }
 const mobile = checkMobile();
-console.log(mobile);
 
 let images = [
   "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/image1_evwpzo.webp",

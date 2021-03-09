@@ -133,7 +133,7 @@ export const Item3 = (
       <br />
       제품에 사용할 모터 채택과 pcb를 개발하여 제품을 완성하였음.
       <br />
-      제품의 회로파트를 담당였음.
+      제품의 회로파트(100%),테스트(60%)를 담당였음.
       <br />
     </p>
   </div>
@@ -153,7 +153,7 @@ export const Item4 = (
         width="560"
         height="315"
         title="HLS12 PC GUI"
-        src="https://www.youtube.com/embed/q-asGOQOAeo"
+        src="https://www.youtube.com/embed/45TNL1J0o-U"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
@@ -162,12 +162,13 @@ export const Item4 = (
     <h3>사용 기술</h3>
     <span>C#, WPF, 회로개발, 펌웨어개발</span>
     <h3>개발 목표</h3>
-    <p>학원에서 진행하였던 팀플 프로젝트를 React로 변경하는것을 목표로 한다</p>
+    <p>HLS12의 성능을 검증하기 위한 테스트 지그를 개발한다.</p>
     <h3>수행 내용</h3>
     <p>
-      프로젝트 모든 내용 진행 <br />
-      백엔드 서버 재설계 진행 (API) 운영 서버 구축 (Docker compose, tomcat, Linux) <br />
-      프론트엔드 REACT로 개발 진행함.
+      테스트 지그의 회로, 펌웨어, PC GUI를 개발하엿음 <br />
+      회로의 센서 선정, 회로도, PCB설계를 진행하였음 <br />
+      마이컴보드의 펌웨어 개발을 진행하였음 <br />
+      C#과 WPF을 사용하여 PC GUI를 개발하였음,차트 라이브러리로는 live chart을 사용함{" "}
       <br />
     </p>
   </div>
@@ -201,16 +202,14 @@ export const Item6 = (
       }}
     />
     <h3>사용 기술</h3>
-    <span>FPCB 회로개발</span>
+    <span>Javascript, css, html</span>
     <h3>개발 목표</h3>
-    <p>리니어서보 개발을 위한 회로를 개발한다. </p>
+    <p>순수한 javascript를 사용하여 간단한 프로젝트를 클론코딩해본다.</p>
     <h3>수행 내용</h3>
     <p>
-      기존 일반 서보모터의 PCB를 FPCB로 재설계하였음.
+      vanilla js을 사용하여 자바스크립트 미니게임 프로젝트를 클론코딩함
       <br />
-      제품에 사용할 모터 채택과 pcb를 개발하여 제품을 완성하였음.
-      <br />
-      제품의 회로파트를 담당였음.
+      클론 코딩하며 프론트엔드 역량을 함양시킨다.
       <br />
     </p>
   </div>
