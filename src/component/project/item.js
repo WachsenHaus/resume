@@ -60,11 +60,6 @@ const ProjectDetailTitleStyled = styled.h1`
     }
   }
 `;
-
-const ProjectImgStyled = styled.img`
-  width: 100%;
-`;
-
 export const Item1 = (
   <div>
     <ProjectDetailTitleStyled>에이콘 이스케이프</ProjectDetailTitleStyled>
@@ -88,6 +83,39 @@ export const Item1 = (
     </span>
     <p>역할 : 프로젝트 팀장, GIT 관리, 팀원 코딩 도움, 서버 운영, 프론트엔드 </p>
     <p>작업 내용 : 메인, Escape, 테마, 예약관리, 후기게시판 페이지</p>
+  </div>
+);
+export const Item8 = (
+  <div>
+    <ProjectDetailTitleStyled>에이콘 팬션</ProjectDetailTitleStyled>
+    <img
+      src="https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,q_auto:eco,w_494/v1615561443/ateam_dh2ame.gif"
+      alt="에이콘 ateam 팬션 사진입니다"
+      style={{
+        width: "100%",
+      }}
+    />
+    <img
+      src="https://res.cloudinary.com/dmglufkmz/image/upload/q_auto:eco/v1615560889/2020-07-31-acorn-ateam-semi-%EB%B0%9C%ED%91%9C%EC%9A%A9.pptx_12_ihcrfd.jpg"
+      alt="ateam 팬션 개발도구 사진"
+      style={{
+        width: "100%",
+      }}
+    />
+    <img
+      src="https://res.cloudinary.com/dmglufkmz/image/upload/q_auto:eco/v1615560889/2020-07-31-acorn-ateam-semi-%EB%B0%9C%ED%91%9C%EC%9A%A9.pptx_5_eiyazq.jpg"
+      alt="ateam 팬션 erd 사진"
+      style={{
+        width: "100%",
+      }}
+    />
+
+    <h3>사용 기술</h3>
+    <span>Java, Javascript, Oracle, JSP</span>
+    <h3>개발 목표</h3>
+    <span>에이콘 팬션 사이트를 구현해보자.</span>
+    <h3>수행 내용</h3>
+    <span>프로젝트 관리, 프로젝트 설계, 프론트엔드 업무 담당</span>
   </div>
 );
 export const Item2 = (
@@ -119,8 +147,8 @@ export const Item3 = (
     <ProjectDetailTitleStyled>HLS12</ProjectDetailTitleStyled>
     <Carousel
       images={[
-        "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/리니어서보1_fv4ano.webp",
-        "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/20190723_144051_mavupf.webp",
+        "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/리니어서보1_fv4ano.png",
+        "https://res.cloudinary.com/dmglufkmz/image/upload/c_scale,h_768,w_1024/v1614845131/20190723_144051_mavupf.png",
       ]}
     />
     <h3>사용 기술</h3>

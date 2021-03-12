@@ -50,6 +50,16 @@ const etcSkills = [
     expert: "80",
     explan: "일정관리등 기타 문서관리등에 사용하고있습니다.",
   },
+  {
+    name: "Docker",
+    expert: "50",
+    explan: "DB서버와 웹서버를 가동할 때 사용하고있습니다.",
+  },
+  {
+    name: "클라우드 플랫폼(AWS,Azure,Naver)",
+    expert: "50",
+    explan: "IAAS로 컴퓨터 자원을 사용할 때 가끔씩 사용하고있습니다.",
+  },
 ];
 
 export default function Skill({ state }) {

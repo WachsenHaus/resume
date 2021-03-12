@@ -4,7 +4,17 @@ import styled from "styled-components";
 import BodyBlackout from "./bodyblackout";
 import Modal from "./modal";
 import { AiFillHome, AiFillGithub } from "react-icons/ai";
-import { ItemDetail, Item1, Item2, Item3, Item4, Item5, Item6, Item7 } from "./item";
+import {
+  ItemDetail,
+  Item1,
+  Item8,
+  Item2,
+  Item3,
+  Item4,
+  Item5,
+  Item6,
+  Item7,
+} from "./item";
 
 const ProjectTitleStyle = styled.div`
   width: 100%;
@@ -21,6 +31,7 @@ const ProjectDetailStyle = styled.div`
   cursor: pointer;
   margin-left: 2rem;
   margin-top: 1rem;
+  ${({ color }) => color && `color : ${color}`}
 
   &:before {
     content: "🔎";
@@ -35,6 +46,7 @@ const IconStyle = styled.i`
 `;
 
 const ProjectItem = ({
+  color,
   onClick,
   isVisible,
   index,
@@ -64,7 +76,7 @@ const ProjectItem = ({
               window.open(`${projectLink}`);
             }}
           >
-            <AiFillHome />
+            <AiFillHome color={color} />
           </IconStyle>
         )}
         {projectGit && (
@@ -117,6 +129,23 @@ const Project = ({ state }) => {
           projectName={"에이콘 이스케이프"}
           projectLink={"http://escape.wachsenhaus.com/"}
           projectGit={"https://github.com/WachsenHaus/acorn_escape"}
+        ></ProjectItem>
+        <ProjectItem
+          color={"blue"}
+          onClick={() => {
+            onSetIsVisible(true);
+            onSetItem(8);
+          }}
+          index={8}
+          isVisible={isVisible}
+          onSetIsVisible={onSetIsVisible}
+          selectedItem={selectedItem}
+          projectContent={Item8}
+          projectName={"에이콘 Ateam 팬션"}
+          projectLink={
+            "https://www.notion.so/bi9choi/A-team-6ad35f35e86c4a40a90b13314ff8a25b"
+          }
+          projectGit={"https://github.com/WachsenHaus/acorn_ateam"}
         ></ProjectItem>
       </ProjectTitleStyle>
 

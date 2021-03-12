@@ -66,7 +66,7 @@ const Certificate = ({ state }) => {
       <Section>
         <CardStyle date="2020/12">💻정보처리기사</CardStyle>
         <CardStyle date="2018/12">🔌전자캐드 기능사</CardStyle>
-        <CardStyle date="2020/12">🚘운전면허 1종 보통</CardStyle>
+        <CardStyle date="2012/12">🚘운전면허 1종 보통</CardStyle>
       </Section>
     </>
   );

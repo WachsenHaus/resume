@@ -53,11 +53,10 @@ const Company = ({ state }) => {
           <CarearSubTitleStyle>2018/01 ~ 2020/01</CarearSubTitleStyle>
         </CarearTitleStyle>
         <CarearContentStyle>
-          <p>🐔 공장용 개발용 PC UI 프로그램 개발</p>
+          <p>🐔 사내 사용(개발,공장용) PC UI 프로그램 개발</p>
           <p>🐔 리니어 서보 스펙 측정 장비(HW, F/W, PC GUI) 솔루션 개발</p>
           <p>🐔 서보 모터 교육 진행</p>
           <p>🐔 리니어 서보 회로 & PCB 개발</p>
-          <p>🐔 Factory Program PC UI 개발</p>
           <p>🐔 CAN SERVO 개발 지원</p>
           <p>🐔 DPC-CAN PCB 개발</p>
           <p>🐔 Hitec-Simple Programmer 개발</p>
