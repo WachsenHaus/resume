@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import Item from "./item";
-import Button from "./button";
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
+import styles from "./carousel.module.css";
 
 const CarouselStyle = styled.div`
   display: flex;
@@ -11,9 +12,6 @@ const CarouselStyle = styled.div`
   width: 100%;
   height: 20rem;
   margin: auto;
-  * {
-    // box-sizing: border-box;
-  }
   .carousel {
     display: flex;
     justify-content: center;
@@ -51,10 +49,7 @@ const Carousel = ({ images }) => {
       isMoving.current = false;
     }, 500);
   }, [current]);
-  useEffect(() => {
-    if (!!images) {
-    }
-  }, []);
+
   const moveNext = () => {
     if (!isMoving.current) {
       if (current === totalItems - 1) {
@@ -79,9 +74,12 @@ const Carousel = ({ images }) => {
     <CarouselStyle>
       <div className="carousel">
         {ItemList}
-
-        <Button prev handleSlide={movePrev} />
-        <Button next handleSlide={moveNext} />
+        <div className={`${styles.box} ${styles.left}`} onClick={movePrev}>
+          <FaLongArrowAltLeft></FaLongArrowAltLeft>
+        </div>
+        <div className={`${styles.box} ${styles.right}`} onClick={moveNext}>
+          <FaLongArrowAltRight></FaLongArrowAltRight>
+        </div>
       </div>
     </CarouselStyle>
   );

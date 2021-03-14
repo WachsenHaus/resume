@@ -44,5 +44,5 @@ const ButtonStyle = styled.div`
 `;
 
 export default function Button({ prev, next, handleSlide }) {
-  return <ButtonStyle prev={prev} next={next} onClick={handleSlide} />;
+  return <ButtonStyle prev={prev} next={next} onClick={handleSlide}></ButtonStyle>;
 }

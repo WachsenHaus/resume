@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import styles from "./item.module.css";
 
 const ItemStyle = styled.img`
   opacity: 0;
@@ -13,7 +12,7 @@ const ItemStyle = styled.img`
   padding: 1rem 4rem;
   border-radius: 50%;
   z-index: 100;
-  transition: transform 0.5s, opacity 0.5s, z-index 0.5s, width 0.5s, height 0.5s;
+  transition: transform 0.25s, opacity 0.3s, z-index 0.5s, width 0.5s, height 0.5s;
 
   transform: ${(props) => (props.prev ? "translateX(-100%)" : "")};
   transform: ${(props) => (props.next ? "translateX(100%)" : "")};
@@ -22,13 +21,11 @@ const ItemStyle = styled.img`
   ${({ active }) =>
     active &&
     `
-    // height:50%
     opacity: 1;
     position: relative;
-    height: 200px;
-    width : 200px;
-    
-    z-index: 900;
+    height: 12rem;
+    width : 12rem;
+    z-index: 999;
   `}
 `;
 
